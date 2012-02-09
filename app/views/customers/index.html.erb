@@ -1,0 +1,29 @@
+<div class="gradient-bg">
+  <h1>Listing Customers</h1>
+</div>
+
+<table>
+  <tr class="headings">
+    <th>Name</th>
+    <th>Address</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr class="<%= cycle('odd', 'even') %>">
+    <td><%= customer.name %></td>
+    <td><%= customer.address %></td>
+    <td><%= button 'Show', customer %></td>
+    <td><%= button 'Edit', edit_customer_path(customer) %></td>
+    <td><%= button_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= button 'New Customer', new_customer_path %>
+<%= button 'Home', "/" %>
+

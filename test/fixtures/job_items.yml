@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  drawing_number: MyString
+  machine: MyString
+  quantity: 1
+  finished_date: 2011-11-16
+
+two:
+  description: MyString
+  drawing_number: MyString
+  machine: MyString
+  quantity: 1
+  finished_date: 2011-11-16

@@ -1,0 +1,33 @@
+<div class="gradient-bg">
+<h1>Listing Job Items</h1>
+</div>
+
+<table>
+  <tr class="headings">
+    <th>Description</th>
+    <th>Drawing Number</th>
+    <th>Machine</th>
+    <th>Quantity</th>
+    <th>Finished Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @job_items.each do |job_item| %>
+  <tr class="<%= cycle('odd', 'even')%>">
+    <td><%= job_item.description %></td>
+    <td><%= job_item.drawing_number %></td>
+    <td><%= job_item.machine %></td>
+    <td><%= job_item.quantity %></td>
+    <td><%= job_item.finished_date %></td>
+    <td><%= button 'Show', [@job, job_item] %></td>
+    <td><%= button 'Edit', edit_job_job_item_path(@job, job_item) %></td>
+    <td><%= button_to 'Destroy', [@job, job_item], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= button 'New Job item', new_job_job_item_path(@job) %>

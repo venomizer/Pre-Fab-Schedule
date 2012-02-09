@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<table>
+  <tr class= 'headings'>
+    <th><%= @job.number %></th>
+    <th><%= @job.customer %></th>
+    <th><%= @job.priority %></th>
+    <th><%= @job.quantity %></th>
+    <th><%= @job.due_date %></th>
+  </tr>
+</table>
+
+<br/>
+
+<table>
+<% @job.job_items.each do |job_item| %>
+  <tr class="<%= cycle('odd', 'even')%>">
+    <td><%= job_item.description %></td>
+    <td><%= job_item.drawing_number %></td>
+    <td><%= job_item.machine %></td>
+    <td><%= job_item.quantity %></td>
+    <td><%= job_item.finished_date %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

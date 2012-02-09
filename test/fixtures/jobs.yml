@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: MyString
+  customer: MyString
+  job_item: MyString
+  priority: 1
+  quantity: 1
+  due_date: 2011-11-16
+
+two:
+  number: MyString
+  customer: MyString
+  job_item: MyString
+  priority: 1
+  quantity: 1
+  due_date: 2011-11-16

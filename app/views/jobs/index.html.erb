@@ -1,0 +1,31 @@
+<div class=gradient-bg>
+    <h1>Listing Jobs</h1>
+</div>
+
+
+<table>
+  <tr class= 'headings'>
+    <th><%= sortable "Number" %></th>
+    <th><%= sortable "Customer_id.name", "Customer" %></th>
+    <th><%= sortable "Priority" %></th>
+    <th><%= sortable "Quantity" %></th>
+    <th><%= sortable "Due Date" %></th>
+  </tr>
+
+
+<% @jobs.each do |job| %>
+  <tr class=<%= cycle('odd', 'even') %>>
+    <td><%= job.number %></td>
+    <td><%= job.customer %></td>
+    <td><%= job.priority %></td>
+    <td><%= job.quantity %></td>
+    <td><%= job.due_date %></td>
+  </tr>
+
+  <% end %>
+</table>
+
+<br />
+
+<%= button "New Job", new_job_path%>
+<%= button "Home", "/" %>
