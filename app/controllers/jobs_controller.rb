@@ -1,7 +1,9 @@
 class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
+
   helper_method :sort_column, :sort_direction
+
   def index
     @jobs = Job.order(sort_column + " " + sort_direction)
 
@@ -83,13 +85,12 @@ class JobsController < ApplicationController
   end
 
   private
-    def sort_column
-      Job.column_names.include?(params[:sort]) ? params[:sort] : "Priority"
-    end
 
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-    end
+  def sort_column
+    Job.column_names.include?(params[:sort]) ? params[:sort] : "priority"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end
-
-
