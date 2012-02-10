@@ -62,7 +62,7 @@ class JobItemsController < ApplicationController
 
     respond_to do |format|
       if @job_item.update_attributes(params[:job_item])
-        format.html { redirect_to @job_item, notice: 'Job item was successfully updated.' }
+        format.html { redirect_to [@job, @job_item], notice: 'Job item was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

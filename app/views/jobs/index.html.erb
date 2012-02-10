@@ -1,19 +1,17 @@
-<%= javascript_include_tag "jobs" %>
-<%= javascript_include_tag "jExpand" %>
-<%= javascript_include_tag "jquery" %>
-
 <div class=gradient-bg>
     <h1>Listing Jobs</h1>
 </div>
 
 
-<table id= "report">
+<table>
   <tr class= 'headings'>
-    <th><%= sortable "number" %></th>
-    <th><%= sortable "customer_id" %></th>
-    <th><%= sortable "priority" %></th>
-    <th><%= sortable "quantity" %></th>
-    <th><%= sortable "due_date" %></th>
+    <span class="class1">
+        <th><%= sortable "number" %></th>
+        <th><%= sortable "customer_id" %></th>
+        <th><%= sortable "priority" %></th>
+        <th><%= sortable "quantity" %></th>
+        <th><%= sortable "due_date" %></th>
+    </span>
   </tr>
 
 

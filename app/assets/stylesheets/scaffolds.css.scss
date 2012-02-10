@@ -27,9 +27,10 @@ pre {
   font-size: 11px; }
 
 a {
-  color: Black;
+  text-decoration: none;
+  color: White;
   &:visited {
-    color: MidnightBlue; }
+    color: White; }
   &:hover {
    padding: 2px 2px 2px 2px;
    color: WhiteSmoke;
@@ -180,8 +181,17 @@ th.desc {
   background-image: url(/images/down_arrow.gif);
 }
 
-table .report{
-
+.class1 A:link {
+color: White;
 }
 
+.class1 A:visited {
+color: White;
+}
+.class1 A:active {
+color: White;
+}
 
+.class1 A:hover {
+color: White;
+}
