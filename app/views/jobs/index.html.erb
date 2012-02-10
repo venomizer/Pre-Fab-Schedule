@@ -1,9 +1,13 @@
+<%= javascript_include_tag "jobs" %>
+<%= javascript_include_tag "jExpand" %>
+<%= javascript_include_tag "jquery" %>
+
 <div class=gradient-bg>
     <h1>Listing Jobs</h1>
 </div>
 
 
-<table>
+<table id= "report">
   <tr class= 'headings'>
     <th><%= sortable "number" %></th>
     <th><%= sortable "customer_id" %></th>
