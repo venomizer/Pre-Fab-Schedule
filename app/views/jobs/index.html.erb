@@ -3,7 +3,7 @@
 </div>
 
 
-<table>
+<table id="yourMom">
   <tr class= 'headings'>
     <span class="class1">
         <th><%= sortable "number" %></th>
@@ -31,3 +31,9 @@
 
 <%= button "New Job", new_job_path%>
 <%= button "Home", "/" %>
+
+<%= javascript_tag do %>
+  $(document).ready(function(){
+    $('#yourMom').jExpand();
+  });
+<% end %>
