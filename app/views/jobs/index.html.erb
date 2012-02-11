@@ -16,14 +16,16 @@
 
 
 <% @jobs.each do |job| %>
-  <tr class=<%= cycle('odd', 'even') %>>
+  <tr class="<%= cycle('odd', 'even') %>">
     <td><%= job.number %></td>
     <td><%= job.customer %></td>
     <td><%= job.priority %></td>
     <td><%= job.quantity %></td>
     <td><%= job.due_date %></td>
   </tr>
-
+  <tr>
+    <td colspan="5">This is a test, dude!</td>
+  </tr>
   <% end %>
 </table>
 
