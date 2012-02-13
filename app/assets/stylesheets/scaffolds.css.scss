@@ -16,6 +16,10 @@ body {
   font-size: 13px;
   line-height: 18px; }
 
+ul.sublist {
+list-style-type: none;
+}
+
 ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -195,3 +199,5 @@ color: White;
 .class1 A:hover {
 color: White;
 }
+
+
