@@ -6,4 +6,9 @@ tmp/
 
 
 #ignore .idea files
-*.[idea]
+*.xml
+*.iml
+*.ids
+*.generators
+*.name
+*.rakeTasks
