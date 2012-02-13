@@ -11,22 +11,64 @@
         <th><%= sortable "priority" %></th>
         <th><%= sortable "quantity" %></th>
         <th><%= sortable "due_date" %></th>
+        <th></th>
     </span>
   </tr>
 
 
 <% @jobs.each do |job| %>
-  <tr class="<%= cycle('odd', 'even') %>">
+  <tr class= "<%= cycle('odd','even') %>">
     <td><%= job.number %></td>
     <td><%= job.customer %></td>
     <td><%= job.priority %></td>
     <td><%= job.quantity %></td>
     <td><%= job.due_date %></td>
+    <td><%= button 'Edit', edit_job_path(job) %></td>
   </tr>
-  <tr>
-    <td colspan="5" class="even">This is a test, dude!</td>
+
+  <tr class="headings">
+    <td colspan="1">
+      <% job.job_items.each do |ji| %>
+        <ul>
+          <li><%= ji.description %></li>
+        </ul>
+      <% end %>
+    </td>
+    <td colspan="1">
+      <% job.job_items.each do |ji| %>
+        <ul class="sublist">
+          <li><%= ji.drawing_number %></li>
+        </ul>
+      <% end %>
+    </td>
+    <td colspan="1">
+      <% job.job_items.each do |ji| %>
+        <ul class="sublist">
+          <li><%= ji.machine %></li>
+        </ul>
+      <% end %>
+    </td>
+    <td colspan="1">
+      <% job.job_items.each do |ji| %>
+        <ul class="sublist">
+          <li><%= ji.quantity %></li>
+        </ul>
+      <% end %>
+    </td>
+    <td colspan="1">
+      <% job.job_items.each do |ji| %>
+        <ul class="sublist">
+          <li><%= ji.finished_date %></li>
+        </ul>
+      <% end %>
+    </td>
+    <td></td>
   </tr>
-  <% end %>
+
+<% end %>
+
+
+
 </table>
 
 <br />
