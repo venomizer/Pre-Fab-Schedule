@@ -2,22 +2,27 @@
     <h1>Listing Jobs</h1>
 </div>
 
+<%= form_tag jobs_path, method: 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", name: nil %>
+    </p>
+<% end %>
 
 <table id="yourMom">
   <tr class= 'headings'>
-    <span class="class1">
         <th><%= sortable "number" %></th>
         <th><%= sortable "customer_id" %></th>
         <th><%= sortable "priority" %></th>
         <th><%= sortable "quantity" %></th>
         <th><%= sortable "due_date" %></th>
         <th></th>
-    </span>
   </tr>
 
-
 <% @jobs.each do |job| %>
-  <tr class= "<%= cycle('odd','even') %>">
+  <tr id="sortable" class= "<%= cycle('odd','even') %>">
     <td><%= job.number %></td>
     <td><%= job.customer %></td>
     <td><%= job.priority %></td>
@@ -64,7 +69,6 @@
     </td>
     <td></td>
   </tr>
-
 <% end %>
 
 
@@ -72,12 +76,14 @@
 </table>
 
 <br />
-
+<%= will_paginate @jobs %>
 <%= button "New Job", new_job_path%>
 <%= button "Home", "/" %>
+
 
 <%= javascript_tag do %>
   $(document).ready(function(){
     $('#yourMom').jExpand();
   });
 <% end %>
+
