@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @jobs = Job.order(sort_column + " " + sort_direction)
+    @jobs = Job.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 20, page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
