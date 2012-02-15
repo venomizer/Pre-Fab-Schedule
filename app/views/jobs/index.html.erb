@@ -11,6 +11,8 @@
     </p>
 <% end %>
 
+
+
 <table id="yourMom">
   <tr class= 'headings'>
         <th><%= sortable "number" %></th>
@@ -22,7 +24,7 @@
   </tr>
 
 <% @jobs.each do |job| %>
-  <tr id="sortable" class= "<%= cycle('odd','even') %>">
+  <tr class= "<%= cycle('odd','even') %>">
     <td><%= job.number %></td>
     <td><%= job.customer %></td>
     <td><%= job.priority %></td>
@@ -85,5 +87,12 @@
   $(document).ready(function(){
     $('#yourMom').jExpand();
   });
+<% end %>
+
+<%= javascript_tag do %>
+    $(document).ready(function(){
+        $('#yourMom tbody').jSortable();
+});
+
 <% end %>
 
