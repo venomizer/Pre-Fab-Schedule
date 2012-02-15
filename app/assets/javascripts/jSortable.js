@@ -8,8 +8,20 @@
 (function($){
     $.fn.jSortable = function(){
 
-        $("#sortable").sortable("enable");
-        $("#sortable").disableSelection();
+        var element = this;
+        var fixHelper = function(e, ui) {
+            ui.children().each(function(){
+                $(this).width($(this).width());
+            });
+            return ui;
+        };
+
+        $(element).sortable({
+            helper: fixHelper,
+            axis: "y",
+            cursor: "move"
+        });
+        $(element).disableSelection();
     }
 
 })(jQuery);
