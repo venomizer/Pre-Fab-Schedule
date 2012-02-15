@@ -200,4 +200,33 @@ color: White;
 color: White;
 }
 
+tr.odd#sortable {
+  position: inherit;
+   background-color: SlateGray;
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(LightBlue), to(LightSteelBlue));
+   background-image: -webkit-linear-gradient(top, LightBlue, LightSteelBlue);
+   background-image:    -moz-linear-gradient(top, LightBlue, LightSteelBlue);
+   background-image:     -ms-linear-gradient(top, LightBlue, LightSteelBlue);
+   background-image:      -o-linear-gradient(top, LightBlue, LightSteelBlue);
+   text-align: center;
+   color: SteelBlue;
+    -webkit-border-radius: 18px; /* Saf3-4, iOS 1-3.2, Android <e;1.6 */
+    -moz-border-radius: 18px; /* FF1-3.6 */
+         border-radius: 18px;
+}
+
+tr.even#sortable{
+  position: inherit;
+   background-color: SlateGray;
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(RoyalBlue), to(SkyBlue));
+   background-image: -webkit-linear-gradient(top, RoyalBlue, SkyBlue);
+   background-image:    -moz-linear-gradient(top, RoyalBlue, SkyBlue);
+   background-image:     -ms-linear-gradient(top, RoyalBlue, SkyBlue);
+   background-image:      -o-linear-gradient(top, RoyalBlue, SkyBlue);
+   text-align: center;
+   color: White;
+    -webkit-border-radius: 18px; /* Saf3-4, iOS 1-3.2, Android <e;1.6 */
+    -moz-border-radius: 18px; /* FF1-3.6 */
+         border-radius: 18px;
+}
 
