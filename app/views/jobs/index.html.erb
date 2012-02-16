@@ -24,7 +24,7 @@
   </tr>
 
 <% @jobs.each do |job| %>
-  <tr class= "<%= cycle('odd','even') %>">
+  <tr id="sortable" class= "<%= cycle('odd','even') %>">
     <td><%= job.number %></td>
     <td><%= job.customer %></td>
     <td><%= job.priority %></td>
@@ -33,7 +33,7 @@
     <td><%= button 'Edit', edit_job_path(job) %></td>
   </tr>
 
-  <tr class="headings">
+  <tr id="sortable" class="child">
     <td colspan="1">
       <% job.job_items.each do |ji| %>
         <ul>
