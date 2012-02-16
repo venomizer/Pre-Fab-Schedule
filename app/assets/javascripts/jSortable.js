@@ -19,9 +19,12 @@
         $(element).sortable({
             helper: fixHelper,
             axis: "y",
-            cursor: "move"
+            cursor: "move",
+            items: "tr.odd2",
+            distance: "30"
+
         });
         $(element).disableSelection();
-    }
+    };
 
 })(jQuery);
