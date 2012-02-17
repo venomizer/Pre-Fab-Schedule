@@ -7,7 +7,7 @@
         $(element).find("tr:first-child").show();
 
         $(element).find("tr.odd2").click(function() {
-            $(this).next("tr").slideToggle("slow");
+            $(this).next("tr").toggle('fade','fast');
         });
-    }
+    };
 })(jQuery);
