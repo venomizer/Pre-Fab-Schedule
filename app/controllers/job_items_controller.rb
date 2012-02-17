@@ -78,7 +78,7 @@ class JobItemsController < ApplicationController
     @job_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to [@job, @job_item] }
+      format.html { redirect_to [@job] }
       format.json { head :ok }
     end
   end
