@@ -20,6 +20,7 @@
         <th><%= sortable "priority" %></th>
         <th><%= sortable "quantity" %></th>
         <th><%= sortable "due_date" %></th>
+        <th><%= sortable "finished" %></th>
         <th></th>
   </tr>
 
@@ -30,6 +31,7 @@
     <td><%= job.priority %></td>
     <td><%= job.quantity %></td>
     <td><%= job.due_date %></td>
+    <td></td>
     <td><%= button 'Edit', edit_job_path(job) %></td>
   </tr>
 
@@ -65,10 +67,11 @@
     <td colspan="1">
       <% job.job_items.each do |ji| %>
         <ul class="sublist">
-          <li><%= ji.finished_date %></li>
+          <li><%= ji.finished %></li>
         </ul>
       <% end %>
     </td>
+    <td></td>
     <td></td>
   </tr>
 <% end %>

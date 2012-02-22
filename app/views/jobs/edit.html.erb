@@ -13,7 +13,7 @@
     <th>Drawing Number</th>
     <th>Machine</th>
     <th>Quantity</th>
-    <th>Finished Date</th>
+    <th>Finished?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -25,7 +25,7 @@
     <td><%= job_item.drawing_number %></td>
     <td><%= job_item.machine %></td>
     <td><%= job_item.quantity %></td>
-    <td><%= job_item.finished_date %></td>
+    <td><%= job_item.finished %></td>
     <td><%= button 'Show', [@job, job_item] %></td>
     <td><%= button 'Edit', edit_job_job_item_path(@job, job_item) %></td>
     <td><%= button_to 'Destroy', [@job, job_item], confirm: 'Are you sure?', method: :delete %></td>
