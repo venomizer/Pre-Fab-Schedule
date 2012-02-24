@@ -2,8 +2,7 @@ class Job < ActiveRecord::Base
   include ActiveModel::Dirty
   belongs_to :customer
   has_many :job_items
-
-  before_validation :update_priorities
+  acts_as_list column: 'priority'
 
   validates :priority, :uniqueness => true
 
@@ -19,21 +18,9 @@ class Job < ActiveRecord::Base
 
   def update_priorities
     if self.priority_changed?
-      if self.priority < self.priority_was
-        while self.class.find(:last, priority + 1).priority - self.priority == 1 and self.priority == self.priority.find(:all, priority)
-          self.class.where("priority >= ?", self.priority).update_all("priority = priority + 1")
-        end
-      end
-
-      if self.priority > self.priority_was
-        while self.priority - self.class.find(:last, self.priority - 1).priority == 1
-          self.class.where("priority >= ?", self.priority).update_all("priority = priority + 1")
-          self.class.where("priority < ?", self.priority).update_all("priority = priority - 1")
-        end
-      end
-    else
-      nil
+      self.insert_at(self.priority)
+      self.class.increment_positions_on_lower_items(self.priority)
     end
   end
-  
+
 end
