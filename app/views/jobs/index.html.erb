@@ -11,91 +11,37 @@
     </p>
 <% end %>
 
-
-
-<table id="yourMom">
-  <tr class= 'headings'>
-        <th><%= sortable "number" %></th>
-        <th><%= sortable "customer_id" %></th>
-        <th><%= sortable "priority" %></th>
-        <th><%= sortable "quantity" %></th>
-        <th><%= sortable "due_date" %></th>
-        <th><%= sortable "finished" %></th>
-        <th></th>
-  </tr>
-
-<% @jobs.each do |job| %>
-  <tr id="sortable" class= "<%= cycle('odd','even') %>">
-    <td><%= job.number %></td>
-    <td><%= job.customer %></td>
-    <td><%= job.priority %></td>
-    <td><%= job.quantity %></td>
-    <td><%= job.due_date %></td>
-    <td></td>
-    <td><%= button 'Edit', edit_job_path(job) %></td>
-  </tr>
-
-  <tr id="sortable" class="child">
-    <td colspan="1">
-      <% job.job_items.each do |ji| %>
-        <ul>
-          <li><%= ji.description %></li>
-        </ul>
-      <% end %>
-    </td>
-    <td colspan="1">
-      <% job.job_items.each do |ji| %>
-        <ul class="sublist">
-          <li><%= ji.drawing_number %></li>
-        </ul>
-      <% end %>
-    </td>
-    <td colspan="1">
-      <% job.job_items.each do |ji| %>
-        <ul class="sublist">
-          <li><%= ji.machine %></li>
-        </ul>
-      <% end %>
-    </td>
-    <td colspan="1">
-      <% job.job_items.each do |ji| %>
-        <ul class="sublist">
-          <li><%= ji.quantity %></li>
-        </ul>
-      <% end %>
-    </td>
-    <td colspan="1">
-      <% job.job_items.each do |ji| %>
-        <ul class="sublist">
-          <li><%= ji.finished %></li>
-        </ul>
-      <% end %>
-    </td>
-    <td></td>
-    <td></td>
-  </tr>
-<% end %>
+<div id="jobTable">
+  <div class="headers-row">
+    <div class="dataColumn"><%= sortable "number" %></div>
+    <div class="dataColumn"><%= sortable "customer_id" %></div>
+    <div class="dataColumn"><%= sortable "quantity" %></div>
+    <div class="dataColumn"><%= sortable "priority" %></div>
+    <div class="dataColumn"><%= sortable "due_date" %></div>
+    <div class="dataColumn"><%= sortable "finished" %></div>
+    <div class="dataColumn"></div>
+  </div>
+  
+  <% @jobs.each do |job| %>
+    <div class="<%= cycle("odd","even") %>">
+      <div class="data"><%= job.number %></div>
+      <div class="data"><%= job.customer_id %></div>
+      <div class="data"><%= job.quantity %></div>
+      <div class="data"><%= job.priority %></div>
+      <div class="data"><%= job.due_date %></div>
+      <div class="data"><%= job.finished %></div>
+      <div class="data"></div>
+    </div>
+  <% end %>
+  
 
 
 
-</table>
-
-<br />
-<%= will_paginate @jobs %>
-<%= button "New Job", new_job_path%>
-<%= button "Home", "/" %>
 
 
-<%= javascript_tag do %>
-  $(document).ready(function(){
-    $('#yourMom').jExpand();
-  });
-<% end %>
 
-<%= javascript_tag do %>
-    $(document).ready(function(){
-        $('#yourMom tbody').jSortable();
-});
+</div>
 
-<% end %>
+
+
 
