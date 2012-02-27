@@ -16,13 +16,23 @@
             return ui;
         };
 
+        $(element).find("div.odd").addClass("odd2");
+        $(element).find("div.even").addClass("odd2");
+        $(element).find("div.job-items-block").hide();
+
         $(element).sortable({
-            helper: fixHelper,
-            axis: "y",
-            cursor: "move",
-            items: "tr.odd2",
             distance: "30"
 
+        });
+
+        $(".full-job-portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix")
+            .find(".odd2")
+                .addClass("ui-widget-header")
+                .end()
+            .find(".job-items-block");
+
+        $(".odd2").click(function(){
+            $(this).parents(".full-job-portlet:first").find(".job-items-block").slideToggle();
         });
         $(element).disableSelection();
     };

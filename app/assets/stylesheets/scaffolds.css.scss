@@ -109,7 +109,6 @@ div.odd {
    position: static;
    text-align: center;
    width: 100%;
-   display: table-row;
    background-color: SlateGray;
    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(LightBlue), to(LightSteelBlue));
    background-image: -webkit-linear-gradient(top, LightBlue, LightSteelBlue);
@@ -124,7 +123,6 @@ div.even{
    position: static;
    width: 100%;
    text-align: center;
-   display: table-row;
    background-color: SlateGray;
    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(RoyalBlue), to(SkyBlue));
    background-image: -webkit-linear-gradient(top, RoyalBlue, SkyBlue);
@@ -139,9 +137,7 @@ div.even{
 div#jobTable {
     position: absolute;
     left: 10%;
-    display: table;
     width: 80%;
-    border-collapse: collapse;
 }
 
 tr.clear td {
@@ -163,7 +159,6 @@ div.headers-row {
 
   text-align: center;
   position: static;
-  width: 100%;
   display: table-header-group;
    background-color: transparent;
    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(RoyalBlue), to(DarkBlue));
@@ -228,4 +223,36 @@ div.data{
   width: 17%;
   padding: 5px;
 }
+
+div.job-items {
+
+  text-align: center;
+  position: static;
+  width: 100%;
+   background-color: transparent;
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(RoyalBlue), to(DarkBlue));
+   background-image: -webkit-linear-gradient(top, RoyalBlue, DarkBlue);
+   background-image:    -moz-linear-gradient(top, RoyalBlue, DarkBlue);
+   background-image:     -ms-linear-gradient(top, RoyalBlue, DarkBlue);
+   background-image:      -o-linear-gradient(top, RoyalBlue, DarkBlue);
+   text-align: center;
+   color: PowderBlue;
+} 
+
+div.job-items-block {
+  text-align: center;
+  position: static;
+  width: 100%;
+   background-color: transparent;
+}
+
+div.full-job-portlet{
+  text-align: center;
+  position: static;
+  overflow: auto;
+   background-color: transparent;
+
+}
+
+
 

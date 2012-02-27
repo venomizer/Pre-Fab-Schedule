@@ -21,26 +21,45 @@
     <div class="dataColumn"><%= sortable "finished" %></div>
     <div class="dataColumn"></div>
   </div>
-  
+
+
   <% @jobs.each do |job| %>
-    <div class="<%= cycle("odd","even") %>">
-      <div class="data"><%= job.number %></div>
-      <div class="data"><%= job.customer_id %></div>
-      <div class="data"><%= job.quantity %></div>
-      <div class="data"><%= job.priority %></div>
-      <div class="data"><%= job.due_date %></div>
-      <div class="data"><%= job.finished %></div>
-      <div class="data"></div>
-    </div>
+      <div class="full-job-portlet">
+            <div class="<%= cycle("odd","even") %>">
+              <div class="data"><%= job.number %></div>
+              <div class="data"><%= job.customer_id %></div>
+              <div class="data"><%= job.quantity %></div>
+              <div class="data"><%= job.priority %></div>
+              <div class="data"><%= job.due_date %></div>
+              <div class="data"><%= job.finished %></div>
+              <div class="data"><%=  button 'Edit', edit_job_path(job, @job) %></div>
+            </div>
+          <div class="job-items-block">
+              <% job.job_items.each do |ji| %>
+                <div class="job-items">
+                  <div class="data"><%= ji.description %></div>
+                  <div class="data"><%= ji.drawing_number %></div>
+                  <div class="data"><%= ji.quantity %></div>
+                  <div class="data"><%= ji.machine %></div>
+                  <div class="data"></div>
+                  <div class="data"><%= ji.finished %></div>
+                  <div class="data"></div>
+                </div>
+              <% end %>
+          </div>
+      </div>
   <% end %>
-  
-
-
-
 
 
 
 </div>
+
+<%= javascript_tag do %>
+    $(document).ready(function(){
+        $('#jobTable').jSortable();
+    });
+
+<% end %>
 
 
 
