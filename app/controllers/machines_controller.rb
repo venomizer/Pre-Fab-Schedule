@@ -1,6 +1,7 @@
 class MachinesController < ApplicationController
   # GET /machines
   # GET /machines.json
+  before_filter :require_login
   def index
     @machines = Machine.all
 

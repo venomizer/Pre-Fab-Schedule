@@ -230,20 +230,20 @@ div.job-items {
   position: static;
   width: 100%;
    background-color: transparent;
-   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(RoyalBlue), to(DarkBlue));
-   background-image: -webkit-linear-gradient(top, RoyalBlue, DarkBlue);
-   background-image:    -moz-linear-gradient(top, RoyalBlue, DarkBlue);
-   background-image:     -ms-linear-gradient(top, RoyalBlue, DarkBlue);
-   background-image:      -o-linear-gradient(top, RoyalBlue, DarkBlue);
-   text-align: center;
-   color: PowderBlue;
 } 
 
 div.job-items-block {
   text-align: center;
   position: static;
   width: 100%;
-   background-color: transparent;
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(RoyalBlue), to(DarkBlue));
+  background-image: -webkit-linear-gradient(top, RoyalBlue, DarkBlue);
+  background-image:    -moz-linear-gradient(top, RoyalBlue, DarkBlue);
+  background-image:     -ms-linear-gradient(top, RoyalBlue, DarkBlue);
+  background-image:      -o-linear-gradient(top, RoyalBlue, DarkBlue);
+  text-align: center;
+  color: PowderBlue;;
 }
 
 div.full-job-portlet{
@@ -254,5 +254,13 @@ div.full-job-portlet{
 
 }
 
+div.hidden2 {
+  display: table-cell;
+  text-align: center;
+  position: relative;
+  padding-right: 53px;
+  width: 17%;
+
+}
 
 

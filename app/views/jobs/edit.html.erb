@@ -5,10 +5,11 @@
 <%= render 'form' %>
 
 <%= button 'New Job item', new_job_job_item_path(@job) %>
+<%= button_to 'Destroy',[@job], confirm: 'Are you sure?', method: :delete %>
 
 <div class= "hidden"><%=  @job_items = @job.job_items %></div>
 <table>
-  <tr class="headings">
+  <tr class="headers-row">
     <th>Description</th>
     <th>Drawing Number</th>
     <th>Machine</th>
@@ -25,7 +26,7 @@
     <td><%= job_item.drawing_number %></td>
     <td><%= job_item.machine %></td>
     <td><%= job_item.quantity %></td>
-    <td><%= job_item.finished %></td>
+    <td><%= job_item.finished? ? "Completed" : "In Progress" %></td>
     <td><%= button 'Show', [@job, job_item] %></td>
     <td><%= button 'Edit', edit_job_job_item_path(@job, job_item) %></td>
     <td><%= button_to 'Destroy', [@job, job_item], confirm: 'Are you sure?', method: :delete %></td>

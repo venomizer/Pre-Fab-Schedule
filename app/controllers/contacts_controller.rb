@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
+  before_filter :require_login
   def index
     @contacts = Contact.all
 

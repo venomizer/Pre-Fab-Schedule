@@ -1,4 +1,5 @@
 class JobItemsController < ApplicationController
+  before_filter :require_login
   before_filter :load_job
 
   # GET /job_items

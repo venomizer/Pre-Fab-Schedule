@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
-
+  before_filter :require_login
   helper_method :sort_column, :sort_direction
 
   def index
@@ -81,6 +81,16 @@ class JobsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to jobs_url }
       format.json { head :ok }
+    end
+  end
+
+  def finish
+    logger.info "I made it here!"
+    @job = Job.find(params[:id])
+    @job.update_attributes(:finished => "true")
+    respond_to do |format|
+      format.html {redirect_to jobs_url}
+      format.json {head :ok}
     end
   end
 

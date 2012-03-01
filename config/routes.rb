@@ -1,4 +1,16 @@
 PreFabSchedule::Application.routes.draw do
+  # get "oauths/oauth"
+
+  match "oauths/callback" => "oauths#callback"
+  match "oauth/:provider" => "oauths#oauth", as: :auth_at_provider
+
+  get "logout" => "sessions#destroy", as: "logout"
+  get "login" => "sessions#new", as: "login"
+  get "signup" => "users#new", as: "signup"
+  resources :users
+  resources :sessions
+
+
   resources :machines
   resources :contacts
 
@@ -6,6 +18,9 @@ PreFabSchedule::Application.routes.draw do
 
   resources :jobs do
     resources :job_items
+    member do
+      put 'finish'
+    end
   end
 
   get "home/index"
