@@ -1,7 +1,7 @@
 <body>
 <div class=gradient-bg>
     <h1>Listing Jobs</h1>
-    <h2>Logged in as <%= current_user.username %></h2>
+    <h2>Logged in as <%= current_user.username.titleize %></h2>
 </div>
 
 <%= form_tag jobs_path, method: 'get' do %>
@@ -33,7 +33,13 @@
               <div class="data"><%= job.quantity %></div>
               <div class="data"><%= job.priority %></div>
               <div class="data"><%= job.due_date %></div>
-              <div class="data"><%= button_to "Finish!", finish_job_path(job, @job), method: "put" %></div>
+              <div class="data">
+                <% if job.finished %>
+                    Finished: <%= Time.now.in_time_zone("Central Time (US & Canada)") %>
+                <% else %>
+                <%= button_to "Finish!", finish_job_path(job, @job), method: "put" %>
+                <% end %>
+              </div>
               <div class="data"><%=  button 'Edit', edit_job_path(job, @job) %></div>
             </div>
           <div class="job-items-block">
@@ -52,8 +58,23 @@
       </div>
   <% end %>
 
+</div>
+<div class="user_nav"><%= button 'New Job', new_job_path(@job) %></div>
 
+<br />
+<br />
+<br />
 
+<div class="user_nav">
+  <%= button_to "Home", root_path %>
+  <% if current_user %>
+      logged in as <%=  current_user.username.titleize %>.
+      <%= link_to "Log out", logout_path %>
+  <% else %>
+      <%= link_to "Sign Up", signup_path %>,
+      <%= link_to "Log In", login_path %>, or
+      <%= link_to "Log In with Google", auth_at_provider_path(provider: :google) %>
+  <% end %>
 </div>
 
 <%= javascript_tag do %>
@@ -63,10 +84,5 @@
 
 <% end %>
 
-<br />
 
 </body>
-
-
-
-

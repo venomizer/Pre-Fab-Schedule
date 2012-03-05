@@ -1,15 +1,20 @@
 html {
-    height: 100%;
+  height: 100%;
+  background-color: SlateGray;
+  background: no-repeat;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(SlateGray), to(WhiteSmoke));
+  background-image: -webkit-linear-gradient(bottom, SlateGray, WhiteSmoke);
+  background-image:    -moz-linear-gradient(bottom, SlateGray, WhiteSmoke);
+  background-image:     -ms-linear-gradient(bottom, SlateGray, WhiteSmoke);
+  background-image:      -o-linear-gradient(bottom, SlateGray, WhiteSmoke);
+  background: -webkit-background-size(cover);
+  background: -moz-background-size(cover);
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 
 body {
-   height: 100%;
-   background-color: SlateGray;
-   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(SlateGray), to(WhiteSmoke));
-   background-image: -webkit-linear-gradient(bottom, SlateGray, WhiteSmoke);
-   background-image:    -moz-linear-gradient(bottom, SlateGray, WhiteSmoke);
-   background-image:     -ms-linear-gradient(bottom, SlateGray, WhiteSmoke);
-   background-image:      -o-linear-gradient(bottom, SlateGray, WhiteSmoke);
+  background: transparent;
    text-align: center;
   color: White;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -135,9 +140,13 @@ div.even{
 
 
 div#jobTable {
-    position: absolute;
-    left: 10%;
-    width: 80%;
+
+  left: 10%;
+  width: 80%;
+  height: 70%;
+  overflow: auto;
+  position: relative;
+  margin-bottom: 2%;
 }
 
 tr.clear td {
@@ -262,5 +271,23 @@ div.hidden2 {
   width: 17%;
 
 }
+
+div.user_nav {
+  text-align: center;
+  color: #191970;
+  position: relative;
+  width: 20%;
+  margin-left: 2%;
+  margin-right: 2%;
+  left: 38%;
+
+}
+
+div#container {
+  overflow: auto;
+
+}
+
+
 
 
