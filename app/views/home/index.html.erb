@@ -20,8 +20,8 @@
           <%= link_to "Log out", logout_path %>
       <% else %>
           <%= link_to "Sign Up", signup_path %>,
-          <%= link_to "Log In", login_path %>, or
-          <%= link_to "Log In with Google", auth_at_provider_path(provider: :google) %>
+          <%= link_to "Log In", login_path %>, or log-in with
+          <%= link_to "Google", auth_at_provider_path(provider: :google) %>
       <% end %>
     </div>
 
