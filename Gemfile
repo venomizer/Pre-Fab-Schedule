@@ -24,6 +24,10 @@ gem 'jquery-rails'
 gem 'will_paginate'
 gem 'acts_as_list'
 gem 'sorcery'
+gem 'cancan'
+gem 'eventmachine',"1.0.0.beta.4.1"
+gem 'thin'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.1'
