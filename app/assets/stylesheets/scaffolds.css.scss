@@ -14,6 +14,7 @@ html {
 }
 
 body {
+  height: 75%;
   background: transparent;
    text-align: center;
   color: White;
@@ -284,8 +285,7 @@ div.user_nav {
 }
 
 div#container {
-  overflow: auto;
-
+  height: 100%;
 }
 
 
