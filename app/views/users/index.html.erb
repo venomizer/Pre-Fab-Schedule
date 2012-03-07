@@ -1,0 +1,9 @@
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+    <ul>
+      <li><%= user.email %></li>
+      <li><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></li>
+    </ul>
+
+<% end %>
