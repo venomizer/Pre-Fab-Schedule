@@ -16,12 +16,10 @@
 
     <div class="user_nav">
       <% if current_user %>
-          logged in as <%=  current_user.username.titleize %>.
+          logged in as <%=  current_user.email.upcase %>.
           <%= link_to "Log out", logout_path %>
       <% else %>
-          <%= link_to "Sign Up", signup_path %>,
-          <%= link_to "Log In", login_path %>, or log-in with
-          <%= link_to "Google", auth_at_provider_path(provider: :google) %>
+          log-in with <%= link_to "Google", auth_at_provider_path(provider: :google) %>
       <% end %>
     </div>
 
