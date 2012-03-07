@@ -31,7 +31,7 @@ class Job < ActiveRecord::Base
       else
         nil
       end
-      if self.priority > self.priority_was
+      if self.priority > self.priority_was and self.priority_was != nil
         self.class.where("priority <= ?", self.priority).update_all("priority = priority - 1")
         self.class.where("priority < ?", self.priority_was).update_all("priority = priority + 1")
       else
