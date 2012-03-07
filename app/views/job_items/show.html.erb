@@ -25,6 +25,13 @@
   <%= @job_item.finished %>
 </p>
 
+<br />
+
+<%= button 'New Job item', new_job_job_item_path(@job) %>
+
+<br />
+<br />
 
 <%= link_to 'Edit', edit_job_job_item_path(@job, @job_item) %> |
 <%= link_to 'Back', edit_job_path(@job) %>
+
