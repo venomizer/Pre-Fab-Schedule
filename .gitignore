@@ -4,7 +4,6 @@ log/*.log
 tmp/
 .sass-cache/
 
-
 #ignore .idea files
 *.xml
 *.iml
@@ -12,3 +11,4 @@ tmp/
 *.generators
 *.name
 *.rakeTasks
+/update/
