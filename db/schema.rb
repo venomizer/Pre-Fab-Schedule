@@ -27,15 +27,15 @@ ActiveRecord::Schema.define(:version => 20120301225158) do
     t.string   "email"
     t.integer  "phone_number"
     t.integer  "customer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.text     "address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "job_items", :force => true do |t|
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(:version => 20120301225158) do
     t.string   "drawing_number"
     t.integer  "quantity"
     t.integer  "job_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "machine_id"
     t.boolean  "finished"
   end
@@ -55,15 +55,15 @@ ActiveRecord::Schema.define(:version => 20120301225158) do
     t.integer  "quantity"
     t.date     "due_date"
     t.integer  "customer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.boolean  "finished"
   end
 
   create_table "machines", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

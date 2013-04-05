@@ -5,7 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'activerecord-jdbcsqlite3-adapter'
 
 
 # Gems used only for assets and not required
@@ -25,8 +25,8 @@ gem 'will_paginate'
 gem 'acts_as_list'
 gem 'sorcery'
 gem 'cancan'
-gem 'eventmachine',"1.0.0.beta.4.1"
-gem 'thin'
+gem 'oauth'
+gem 'oauth2'
 
 
 # To use ActiveModel has_secure_password

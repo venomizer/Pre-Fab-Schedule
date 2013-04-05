@@ -3,9 +3,9 @@ class Job < ActiveRecord::Base
   belongs_to :customer
   has_many :job_items
   acts_as_list column: 'priority'
-  before_validation :update_priorities, :update_job_items
+  before_validation :update_job_items
+  before_save :bottom_it
 
-  validates :priority, :uniqueness => true
 
   def self.search(search)
     if search
@@ -17,30 +17,16 @@ class Job < ActiveRecord::Base
 
   private
 
-  def update_priorities
-    if self.priority_was == nil
-      self.class.where("priority >= ?", self.priority).update_all("priority = priority + 1")
-    else
-      nil
-    end
-
-    if self.priority_changed? and self.priority_was != nil
-      if self.priority < self.priority_was
-        self.class.where("priority >= ?", self.priority).update_all("priority = priority + 1")
-        self.class.where("priority > ?", self.priority_was).update_all("priority = priority - 1")
+  def bottom_it
+    if self.finished_changed? && !self.last?
+      if self.finished
+        self.move_to_bottom
       else
-        nil
-      end
-      if self.priority > self.priority_was and self.priority_was != nil
-        self.class.where("priority <= ?", self.priority).update_all("priority = priority - 1")
-        self.class.where("priority < ?", self.priority_was).update_all("priority = priority + 1")
-      else
-        nil
       end
     else
-      nil
     end
   end
+
 
   def update_job_items
     if self.finished_changed?

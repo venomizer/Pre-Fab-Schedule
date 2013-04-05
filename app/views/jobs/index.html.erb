@@ -22,6 +22,7 @@
     <div class="dataColumn"><%= sortable "due_date" %></div>
     <div class="dataColumn"><%= sortable "finished" %></div>
     <div class="hidden2"></div>
+    <div class="hidden3"></div>
   </div>
 
 
@@ -41,6 +42,7 @@
                 <% end %>
               </div>
               <div class="data"><%=  button 'Edit', edit_job_path(job, @job) %></div>
+              <div class="data"><%= link_to image_tag('DeleteRed.png', :size => "16x16"), job, confirm: 'Are you sure?', method: :delete %></div>
             </div>
           <div class="job-items-block">
               <% job.job_items.each do |ji| %>
